@@ -1,0 +1,55 @@
+/* Home.css */
+.home {
+  padding-top: 180px; /* Add padding to account for the fixed navbar */
+  background-color: #f8f9fa; /* Light background for the page */
+  min-height: 100vh;
+  margin-top: 5000px; 
+}
+
+.home-container {
+  padding: 30px;
+  /* max-width: 1200px; Limit the container width for better readability */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 30px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add a hover effect to product cards */
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinner styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Alert styling */
+.alert {
+  max-width: 600px;
+  margin: 0 auto;
+}
