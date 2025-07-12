@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 function AddProduct() {
   const email = localStorage.getItem('email');
+  const username = localStorage.getItem("username");
+
   const [product, setProduct] = useState({
-    userName: "",
+    userName: username,
     contactNo: "",
     productName: "",
     description: "",
@@ -17,8 +19,7 @@ function AddProduct() {
   const navigate = useNavigate();
   
   // Retrieve the username from localStorage
-  const username = localStorage.getItem("username");
-
+ 
   // Set the initial value of userName in the product state
   useEffect(() => {
     if (username) {

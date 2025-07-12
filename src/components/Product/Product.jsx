@@ -4,7 +4,7 @@ import './Product.css'; // Import the CSS file
 function Product({ product }) {
   const [isAddedToCart, setIsAddedToCart] = useState(false); // State to track if the product is in the cart
   const userEmail = localStorage.getItem('email'); // Retrieve the logged-in user's email from localStorage
-
+  const token = localStorage.getItem('token');
   // Function to handle "Add to Cart" button click
   const handleAddToCart = async () => {
     try {
@@ -13,7 +13,9 @@ function Product({ product }) {
       const response = await fetch('http://localhost:8080/home/addcart', {
         method: 'POST',
         headers: {
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
+
         },
         body: JSON.stringify({
           productId: product.productId,

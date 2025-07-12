@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/navbar";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-// import "./MyProducts.css"; // Optional: Add custom styles
+import "./MyProduct.css"; // Import custom CSS
 
 function MyProducts() {
   const [products, setProducts] = useState([]);
@@ -87,16 +87,16 @@ function MyProducts() {
           <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             {products.map((product) => (
               <div key={product.productId} className="col">
-                <div className="card h-100">
+                <div className="card h-100 product-card">
                   <img
                     src={product.imageUrl} // Ensure your backend provides the image URL
-                    className="card-img-top"
+                    className="card-img-top product-image"
                     alt={product.productName}
                   />
                   <div className="card-body">
-                    <h5 className="card-title">{product.productName}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p className="card-text">
+                    <h5 className="card-title product-title">{product.productName}</h5>
+                    <p className="card-text product-description">{product.description}</p>
+                    <p className="card-text product-price">
                       <strong>Price:</strong> ${product.price}
                     </p>
                   </div>

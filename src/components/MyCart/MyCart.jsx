@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/navbar';
 import Product from '../Product/Product';
-import './MyCart.css'
+import './MyCart.css';
 
 function MyCart() {
   const [products, setProducts] = useState([]);
@@ -51,10 +51,10 @@ function MyCart() {
   }, [fetchData]);
 
   return (
-    <div className="home">
+    <div className="home1">
       <Navbar />
-      <div className="home-container container-fluid">
-        <h1 className="text-center my-1">My Cart</h1>
+      <div className="home-container1 container-fluid">
+        <h1 className="text-center my-4">My Cart</h1>
         {loading ? (
           <div className="text-center">
             <div className="spinner-border text-primary" role="status">
@@ -64,7 +64,7 @@ function MyCart() {
           </div>
         ) : products.length === 0 ? (
           <div className="alert alert-info text-center" role="alert">
-            No products in your cart
+            Your cart is empty.Add products!
           </div>
         ) : (
           <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
